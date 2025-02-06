@@ -16,6 +16,15 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        charset: false,
+        api: 'modern',
+        additionalData: `@use "@/styles/variables.scss" as *;`,
+      }
+    }
   }
 })
 
