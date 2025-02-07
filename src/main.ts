@@ -13,6 +13,8 @@ import GlobalComponent from '@/components'
 import '@/styles/index.scss'
 // 引入路由
 import router from './router/index'
+// 引入pinia
+import pinia from "@/store";
 
 const app = createApp(App);
 // 安装自定义插件
@@ -20,5 +22,6 @@ app.use(GlobalComponent);
 app.use(ElementPlus, {
     locale: zhCn,
 });
+app.use(pinia);
 app.use(router);
 app.mount('#app');
