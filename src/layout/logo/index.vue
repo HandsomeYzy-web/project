@@ -24,16 +24,17 @@ export default {
   color: white;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   .logo-img {
     border-radius: 50%;
     overflow: hidden;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
   }
   img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
   p {
     margin-left: 10px;

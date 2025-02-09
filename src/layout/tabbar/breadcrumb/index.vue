@@ -1,6 +1,6 @@
 <template>
   <el-icon style="margin-right: 10px" @click="changeIcon">
-      <component :is="fold?'Expand':'Fold'" />
+      <component :is="layoutSettingStore.fold?'Expand':'Fold'" />
   </el-icon>
   <el-breadcrumb separator-icon="ArrowRight">
     <el-breadcrumb-item>111</el-breadcrumb-item>
@@ -9,11 +9,10 @@
 </template>
 
 <script setup lang="ts">
-import { Expand } from "@element-plus/icons-vue";
-import { ref } from 'vue'
-let fold = ref(false);
+import useLayOutSettingStore from "@/store/modules/setting";
+let layoutSettingStore = useLayOutSettingStore();
 const changeIcon = () => {
-  console.log("changeIcon");
+  layoutSettingStore.fold = !layoutSettingStore.fold;
 }
 </script>
 
