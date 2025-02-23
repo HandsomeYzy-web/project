@@ -1,14 +1,16 @@
 // 进行axios的二次封装
 import axios from 'axios'
 import {ElMessage} from "element-plus";
+import useUserStore from "@/store/modules/user";
 let request = axios.create({
     baseURL: 'http://localhost:8080',
     timeout: 5000
 });
 request.interceptors.request.use((config) => {
-    // 拦截请求
-    // 1.config配置对象
-    // 2.必须返回config
+    let userStore = useUserStore();
+    if (userStore.token) {
+        config.headers.token = userStore.token;
+    }
     return config;
 });
 request.interceptors.response.use((response) => {

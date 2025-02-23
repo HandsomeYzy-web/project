@@ -39,6 +39,7 @@ export default {
   p {
     margin-left: 10px;
     font-size: $base-logo-title-fontSize;
+    text-wrap: nowrap;
   }
 }
 </style>

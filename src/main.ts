@@ -15,6 +15,8 @@ import '@/styles/index.scss'
 import router from './router/index'
 // 引入pinia
 import pinia from "@/store";
+// 引入路由鉴权
+import './permission'
 
 const app = createApp(App);
 // 安装自定义插件
@@ -22,6 +24,6 @@ app.use(GlobalComponent);
 app.use(ElementPlus, {
     locale: zhCn,
 });
-app.use(pinia);
 app.use(router);
+app.use(pinia);
 app.mount('#app');
