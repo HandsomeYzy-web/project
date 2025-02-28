@@ -14,6 +14,7 @@ let useUserStore = defineStore("user", {
             menuRoutes: constantRoutes,// 仓库存储生成的菜单（路由）数据
             username: "",
             avatar: "",
+            userId: "",
         };
     },
     actions: {
@@ -33,6 +34,7 @@ let useUserStore = defineStore("user", {
             if (result.code === 1) {
                 this.username = result.data.username;
                 this.avatar = result.data.avatar;
+                this.userId = result.data.userId;
                 return 'ok';
             } else {
                 return Promise.reject(new Error(result.msg));
@@ -42,6 +44,7 @@ let useUserStore = defineStore("user", {
             this.token = null;
             this.username = "";
             this.avatar = "";
+            this.userId = "";
             REMOVE_TOKEN();
         },
     },

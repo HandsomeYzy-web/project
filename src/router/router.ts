@@ -57,7 +57,7 @@ export const constantRoutes = [
         name: "screen",
         meta: {
             title: "数据大屏",
-            hidden: false,
+            hidden: true,
             icon: "DataAnalysis",
         }
     },
@@ -87,7 +87,7 @@ export const constantRoutes = [
                 name: "acl/role",
                 meta: {
                     title: "角色管理",
-                    hidden: false,
+                    hidden: true,
                     icon: "UserFilled",
                 }
             },
@@ -97,7 +97,7 @@ export const constantRoutes = [
                 name: "acl/permission",
                 meta: {
                     title: "菜单管理",
-                    hidden: false,
+                    hidden: true,
                     icon: "Monitor",
                 }
             }
@@ -139,7 +139,7 @@ export const constantRoutes = [
                 name: "product/spu",
                 meta: {
                     title: "SPU管理",
-                    hidden: false,
+                    hidden: true,
                     icon: "Box",
                 }
             },
@@ -149,11 +149,95 @@ export const constantRoutes = [
                 name: "product/sku",
                 meta: {
                     title: "SKU管理",
-                    hidden: false,
+                    hidden: true,
                     icon: "Handbag",
+                }
+            },
+            {
+                path: "/product/list",
+                component: () => import("@/views/product/list/index.vue"),
+                name: "product/user",
+                meta: {
+                    title: "商品列表管理",
+                    hidden: false,
+                    icon: "Grid",
+                }
+            },
+            {
+                path: "/product/replenishmentapprove",
+                component: () => import("@/views/product/replenishmentapprove/index.vue"),
+                name: "product/replenishmentapprove",
+                meta: {
+                    title: "补货确认",
+                    hidden: false,
+                    icon: "Check",
+                }
+            },
+            {
+                path: "/product/replenishmentsupplier",
+                component: () => import("@/views/product/replenishmentsupplier/index.vue"),
+                name: "product/replenishmentsupplier",
+                meta: {
+                    title: "提供补货",
+                    hidden: false,
+                    icon: "Clock",
+                }
+            },
+            {
+                path: "/product/replenishmentarrived",
+                component: () => import("@/views/product/replenishmentarrived/index.vue"),
+                name: "product/replenishmentarrived",
+                meta: {
+                    title: "补货到店",
+                    hidden: false,
+                    icon: "Van",
                 }
             }
         ]
-    }
+    },
+    {
+        path: "/checkout",
+        component: () => import("@/layout/index.vue"),
+        name: "checkout",
+        meta: {
+            title: "layout",
+            hidden: false,
+            icon: "Avatar",
+        },
+        children: [
+            {
+                path: "/checkout/check",
+                component: () => import("@/views/checkout/index.vue"),
+                name: "checkout/check",
+                meta: {
+                    title: "收银台",
+                    hidden: false,
+                    icon: "Sell",
+                }
+            },
+        ]
+    },
+    {
+        path: "/member",
+        component: () => import("@/layout/index.vue"),
+        name: "member",
+        meta: {
+            title: "layout",
+            hidden: false,
+            icon: "Avatar",
+        },
+        children: [
+            {
+                path: "/member/look",
+                component: () => import("@/views/member/index.vue"),
+                name: "/member/look",
+                meta: {
+                    title: "会员界面",
+                    hidden: false,
+                    icon: "Sell",
+                }
+            },
+        ]
+    },
 
 ]

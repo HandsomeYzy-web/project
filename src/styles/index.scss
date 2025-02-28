@@ -2,13 +2,13 @@
 @use "reset" as *;
 // 滚动条样式
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: $base-menu-background;
 }
 ::-webkit-scrollbar-thumb {
-  width: 10px;
-  background-color: yellowgreen;
-  border-radius: 10px;
+  width: 8px;
+  background-color: #f3f5f8;
+  border-radius: 8px;
 }

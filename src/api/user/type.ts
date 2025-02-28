@@ -24,3 +24,24 @@ export interface userInfo extends loginResponse{
       updatedAt: string
   }
 }
+
+export interface User {
+    userId: string;
+    username: string;
+    avatar: string;
+    email: string;
+    phone: string;
+    role: string;
+    status: number;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export interface UserListResponse {
+    code: number;
+    msg: string;
+    data: {
+        total: number;
+        records: User[];
+    };
+}
